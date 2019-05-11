@@ -1,0 +1,453 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgba(255, 0, 0, .4);
+}
+
+/* 导航栏 header */
+nav {
+    padding: 9px 0;
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.navbar-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    height: 52px;
+}
+
+.navbar-header {
+    align-self: center;
+}
+
+.navbar-header-icon {
+    float: left;
+}
+
+.navbar-header-icon img {
+    align-self: center;
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-header span {
+    align-self: center;
+    margin-left: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+
+.navbar-button {
+    display: none;
+    float: right;
+    height: 40px;
+    width: 40px;
+    padding: 7px;
+    background-color: transparent;
+    border: 3px solid rgba(255,0,0,.3);
+    border-radius: 6px;
+}
+
+.navbar-button span {
+    display: block;
+    margin: 0;
+    content: "";
+    width: 20px;
+    height: 3px;
+    background-color: rgba(255, 0, 0, .3);
+}
+
+.navbar-button .span-middle {
+    margin: 4px 0;
+}
+
+.navbar-nav {
+    position: absolute;
+    right: 0;
+}
+
+.navbar-nav-ul {
+
+}
+
+.navbar-nav li {
+    display: block;
+    float: left;
+}
+
+.navbar-nav li a {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 17px;
+    /* font-weight: bold; */
+    color: white;
+}
+
+.navbar-nav li.active a {
+    color: red;
+}
+
+.navbar-nav .navbar-nav-ul li a::after {
+    background-color: red;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+
+.navbar-nav li.active a::after,
+.navbar-nav li a:hover::after {
+    width: 100%;
+}
+/*******************/
+
+/* 搜索 search */
+
+.search {
+    padding: 100px 0;
+}
+
+.search-content {
+    width: 1000px;
+}
+
+.search-icon {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.search-icon img {
+    width: 100px;
+}
+
+.search-title {
+    text-align: center;
+    color: white;
+}
+
+.search-title h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 70px;
+    line-height: 100px;
+}
+
+.searchBar {
+    padding: 50px 20px;
+    background-color: rgba(255, 0, 0, .3);
+    border-radius: 15px;
+}
+
+.searchBar {
+    display: flex;
+    padding: 50px 120px;
+}
+
+.searchBar input, button {
+    margin: 2px;
+    padding: 10px;
+    line-height: 30px;
+    border: 0;
+    border-radius: 7px;
+}
+
+.searchBar input {
+    width: 75%;
+    font-size: 20px;
+    color: rgba(255, 0, 0, .8)
+}
+
+.searchBar button {
+    width: 25%;
+    background-color: rgba(255, 255, 255, .5);
+    font-size: 23px;
+    color: rgba(255, 0, 0, 1);
+}
+
+/*******************/
+
+/* 响应式 responsive */
+@media screen and (min-width: 1200px) {
+    .navbar-container,
+    .search-content {
+        width: 1000px;
+    }
+
+    .searchBar {
+        padding: 50px 120px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    .navbar-container,
+    .search-content {
+        width: 800px;
+    }
+
+    .searchBar {
+        padding: 50px 20px;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width: 1000px) {
+    .navbar-container,
+    .search-content {
+        width: 700px;
+    }
+
+    .navbar-nav li a {
+        margin: 0 7px;
+    }
+
+    .searchBar {
+        flex-wrap: wrap;
+        padding: 50px 70px;
+    }
+
+    .searchBar input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .searchBar button {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 800px) {
+    .navbar-container,
+    .search-content {
+        width: 600px;
+    }
+
+    .navbar-nav li a {
+        margin: 0 5px;
+    }
+
+    .searchBar {
+        flex-wrap: wrap;
+        padding: 50px 20px;
+    }
+
+    .searchBar input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .searchBar button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .navbar-container,
+    .search-content {
+        width: 93.75%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .navbar-header {
+        width: 100%;
+    }
+
+    .navbar-button {
+        display: block;
+    }
+
+    .navbar-nav {
+        background-color: rgba(254, 100, 104, 1);
+        width: 100%;
+        max-height: 0;
+        top: 50px;
+        border-radius: 10px;
+        overflow-y: hidden;
+        transition: max-height .8s ease;
+    }
+
+    .navbar-nav::after {
+        height: 10px;
+        width: 100%;
+    }
+
+    .navbar-nav.open {
+        max-height: 260px;
+    }
+
+    .navbar-nav ul {
+        padding-left: 40px;
+    }
+
+    .navbar-nav li {
+        float: none;
+        padding: 8px 0;
+    }
+
+    .navbar-nav li a {
+        margin: 0 3px;
+    }
+
+    .searchBar {
+        flex-wrap: wrap;
+        padding: 50px 20px;
+    }
+
+    .searchBar input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .searchBar button {
+        width: 100%;
+    }
+}
+/*******************/
+
+/******************************************/
+
+/* 登录 login */
+.login-container {
+    padding-top: 200px;
+    width: 400px;
+    color:rgba(255, 0, 0, 0.8);
+}
+
+.login-reminder {
+}
+
+.login-reminder p {
+    margin: 20px 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    vertical-align: middle;
+}
+
+.login-textform,
+.login-button {
+    margin: 5px;
+    line-height: 45px;
+}
+
+.login-textform {
+    margin: 5px 0;
+    padding: 0 0 0 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid rgba(255, 0, 0, .3);
+    font-size: 18px;
+}
+
+.login-button {
+    display: inline-flex;
+    position: absolute;
+    padding:0;
+    top: 77px;
+    right: 0;
+    margin:auto;
+    margin-right: 11px;
+    align-self: center;
+    width: 30px;
+    height: 30px;
+    color: rgba(255, 0, 0, .5);
+    background-color: inherit;
+    border: 2px solid rgba(255,0,0,.5);
+    border-radius: 8px;
+}
+
+.login-button i {
+    margin:auto;
+    font-size: 20px;
+}
+
+#login-checkbox {
+    visibility: hidden;
+    text-align: right;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+.login-form label {
+    user-select: none;
+    font-size: 20px;
+}
+
+.login-form label i {
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+/* .login-checkbox input {
+    visibility: hidden;
+} */
+
+.login-options {
+    text-align: right;
+}
+
+
+.login-options > div {
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column-reverse;
+    height: 20px;
+    border: 3px solid rgba(255,0,0,0);
+    /* transition: all 0.3s; */
+}
+
+.login-options p,
+.login-options a {
+    margin: 0;
+    line-height: 20px;
+    color: rgba(255, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.login-rememberme > div {
+    display:inline-flex;
+    vertical-align: middle;
+}
+
+.rememberme-checkbox {
+    width: 18px;
+    height: 18px;
+}
+
+.login-rememberme p {
+    padding-left: 7px;
+    font-size: 20px;
+}
+
+.login-forgotIDPWD div {
+    font-size: 10px;
+}
+
+.login-register > div {
+    display: inline-flex;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.login-register > div a,
+.login-register > div p {
+    flex:1;
+}
